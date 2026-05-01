@@ -9,6 +9,7 @@ app.use(
   cors({
     origin: [
       "https://vegimart12.netlify.app",
+      "http://localhost:3001",
     ],
     credentials: true,
   })
