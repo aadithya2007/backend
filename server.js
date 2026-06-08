@@ -10,6 +10,7 @@ app.use(
     origin: [
       "https://vegimart12.netlify.app",
       "http://localhost:3001",
+      "https://ecommerce-grocery-delta.vercel.app/",
     ],
     credentials: true,
   })
