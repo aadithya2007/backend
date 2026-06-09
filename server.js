@@ -11,6 +11,7 @@ app.use(
       "https://vegimart12.netlify.app",
       "http://localhost:3001",
       "https://ecommerce-grocery-delta.vercel.app",
+      "https://vegimart12.vercel.app/login",
     ],
     credentials: true,
   })

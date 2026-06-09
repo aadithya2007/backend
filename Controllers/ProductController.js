@@ -8,6 +8,15 @@ async function getProducts(req, res) {
       filter.category = req.query.category;
     }
 
+    // If a search query is provided, match name or description (case-insensitive)
+    if (req.query.search) {
+      const q = req.query.search.trim();
+      if (q.length > 0) {
+        const searchRegex = new RegExp(q, "i");
+        filter.$or = [{ name: searchRegex }, { description: searchRegex }];
+      }
+    }
+
     const products = await Product.find(filter).populate("category").sort({ createdAt: -1 });
     res.json(products);
   } catch (error) {
